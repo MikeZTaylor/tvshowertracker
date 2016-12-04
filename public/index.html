@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="tv shower tracker"> #root element
+<html ng-app="tv shower tracker"> <!--root element-->
 <head>
     <base href="/">
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>TrackmyShows</title>
-    <link rel="stylesheets/styles.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,10 +21,17 @@
     </div>
     <ul class="nav navbar-nav">
         <li data-match-route="/$"><a href="/">Home</a> </li>
-        <li data-match-route="/$"><a href="/">Home</a> </li>
+        <li data-match-route="/$"><a href="/">Add</a> </li>
     </ul>
-
-
+    </ul>
+    <ul class="nav navbar-nav pull-right" ng-if="!currentUser">
+        <li data-match-route="/login"><a href="/login">Login</a></li>
+        <li data-match-route="/signup"><a href="/signup">Sign up</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right" ng-if="currentUser">
+        <li class="navbar-text" ng-bind="currentUser.email"></li>
+        <li><a href="javascript:void(0)" ng-click="logout()">Log me out</a></li>
+    </ul>
 </div>
 
 </body>
