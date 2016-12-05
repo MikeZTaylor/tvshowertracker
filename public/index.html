@@ -19,8 +19,8 @@
         </a>
     </div>
     <ul class="nav navbar-nav">
-        <li data-match-route="/$"><a href="/">Home</a> </li>
-        <li data-match-route="/$"><a href="/">Add</a> </li>
+        <li data-match-route="/$"><a href="/">Home</a></li>
+        <li data-match-route="/add"><a href="/add">Add</a></li>
     </ul>
     </ul>
     <ul class="nav navbar-nav pull-right" ng-if="!currentUser">
@@ -45,6 +45,9 @@
 <script src="vendor/moment.min.js"></script>
 
 <script src="app.js"></script>
+<script src="filters/fromNow.js"></script>
 <script src="controllers/main.js"></script>
 <script src="services/show.js"></script>
+<script src="controllers/detail.js"></script>
+<script src="controllers/add.js"></script>
 </html>
