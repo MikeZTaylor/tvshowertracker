@@ -6,9 +6,9 @@ angular.module('tv shower tracker')
                     $scope.showName = '';
                     $scope.addForm.$setPristine();
                     $alert({
-                        content: 'Your show has been added',
+                        content: 'your show has been added.',
                         animation: 'fadeZoomFadeDown',
-                        type: 'success',
+                        type: 'info',
                         duration: 3
                     });
                 })
@@ -18,7 +18,7 @@ angular.module('tv shower tracker')
                     $alert({
                         content: response.data.message,
                         animation: 'fadeZoomFadeDown',
-                        type: 'danger',
+                        type: 'warning',
                         duration: 3
                     });
                 });

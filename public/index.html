@@ -6,22 +6,21 @@
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <title>TrackmyShows-Dammit</title>
     <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="navbar navbar-default navbar-static-top" role="navigation" bs-navbar>
+<div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top" role="navigation" bs-navbar>
     <div class="navbar-header">
         <a class="navbar-brand" href="/">
-            <span class="glyphicon glyphicon-film"></span>
-            TrackmyShows
+            <span>TrackmyShows <strong><i>Dammit</i></strong></span>
         </a>
     </div>
     <ul class="nav navbar-nav">
         <li data-match-route="/$"><a href="/">Home</a></li>
         <li data-match-route="/add"><a href="/add">Add</a></li>
-    </ul>
     </ul>
     <ul class="nav navbar-nav pull-right" ng-if="!currentUser">
         <li data-match-route="/login"><a href="/login">Login</a></li>
@@ -29,12 +28,19 @@
     </ul>
     <ul class="nav navbar-nav pull-right" ng-if="currentUser">
         <li class="navbar-text" ng-bind="currentUser.email"></li>
-        <li><a href="javascript:void(0)" ng-click="logout()">Log me out</a></li>
+        <li><a href="javascript:void(0)" ng-click="logout()">Logout</a></li>
     </ul>
 </div>
+
+
 <div ng-view></div>
 
 </body>
+
+<script src="app.min.js"></script>
+<script src="templates.js"></script>
+
+<!--
 <script src="vendor/angular.js"></script>
 <script src="vendor/angular-strap.js"></script>
 <script src="vendor/angular-strap.tpl.js"></script>
@@ -43,11 +49,17 @@
 <script src="vendor/angular-route.js"></script>
 <script src="vendor/angular-animate.js"></script>
 <script src="vendor/moment.min.js"></script>
+-->
 
 <script src="app.js"></script>
+<script src="controllers/add.js"></script>
 <script src="filters/fromNow.js"></script>
 <script src="controllers/main.js"></script>
-<script src="services/show.js"></script>
 <script src="controllers/detail.js"></script>
-<script src="controllers/add.js"></script>
+<script src="controllers/navbar.js"></script>
+<script src="controllers/login.js"></script>
+<script src="controllers/signup.js"></script>
+<script src="services/auth.js"></script>
+<script src="services/show.js"></script>
+<script src="services/subscription.js"></script>
 </html>
